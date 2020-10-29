@@ -1,0 +1,79 @@
+{include file='common/head'}
+<body>
+<div class="x-body">
+    <form class="layui-form" method="post" enctype="multipart/form-data">
+        <div class="layui-form-item">
+            <div class="layui-input-inline">
+                <span class="x-black">为</span><span style="font-size:large">{$info.title}</span><span>设置权限</span>
+            </div>
+            <div>
+                <span style="color: red">**权限不能为空哦**</span>
+            </div>
+            <div>
+                <span style="color: red">**非代理禁止设置个人信息权限**</span>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">
+                <span class="x-red">*</span>选择权限
+            </label>
+            <div class="layui-input-inline">
+                <!--被选中的权限-->
+                {volist name="own" id="item"}
+                <input type="checkbox" name="rules[]" checked="checked"
+                       value="{$item.id}" /> {$item.title}<br>
+                {/volist}
+                <!--未被选中的权限-->
+                {volist name="none" id="item"}
+                <input type="checkbox" name="rules[]"
+                       value="{$item.id}" /> {$item.title}<br>
+                {/volist}
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">
+                <input type="hidden" value="{$info.id}" name="id">
+            </label>
+            <button  class="layui-btn" lay-filter="setquan" lay-submit="" >
+                提交
+            </button>
+        </div>
+    </form>
+</div>
+<script>
+    layui.use(['form','layer'], function(){
+        $ = layui.jquery;
+        var form = layui.form
+            ,layer = layui.layer;
+
+        //自定义验证规则
+        //监听提交
+        form.on('submit(setquan)', function(data){
+            // console.log(data);
+            // return false;
+            //ar url="";
+            $.ajax({
+                type: "post",
+                async:false,
+                url: "{:url('admin/group/setAuth')}",
+                data: data.field,
+                success:function(msg){
+                    if(msg.code==1){
+                        layer.msg(msg.tips,{icon:6,time:1000});
+                        setTimeout(function () {
+                            window.parent.location.reload();//刷新父级窗口
+                        }, 1000);
+                    }else{
+                        layer.msg(msg.tips,{icon:5,time:1000});
+                    }
+                }
+            })
+            return false;
+        });
+
+
+    });
+</script>
+</body>
+
+</html>

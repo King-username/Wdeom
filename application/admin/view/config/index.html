@@ -1,0 +1,155 @@
+{include file='common/head'}
+<body>
+<div class="x-nav">
+            <span class="layui-breadcrumb">
+                <a href="">首页</a>
+                <a href="">{$nav}</a>
+                <a>
+                    <cite>{$title}</cite></a>
+            </span>
+    <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"
+       onclick="location.reload()" title="刷新">
+        <i class="layui-icon layui-icon-refresh" style="line-height:30px"></i>
+    </a>
+</div>
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+
+        <div class="layui-col-md12">
+
+            <div class="layui-card">
+                <div class="layui-card-body ">
+                    <div class="layui-collapse" lay-filter="test">
+                        <div class="layui-colla-item">
+                            <h2 class="layui-colla-title">条件筛选<i class="layui-icon layui-colla-icon"></i></h2>
+                            <div class="layui-colla-content">
+                                <form class="layui-form" action="">
+
+                                    <div class="layui-form-item">
+                                        <div class="layui-inline">
+                                            <label class="layui-form-label">配置名</label>
+                                            <div class="layui-input-inline" style="width: 400px;">
+                                                <input type="text" name="name" placeholder="" autocomplete="off"
+                                                       class="layui-input">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="layui-form-item">
+                                        <div class="layui-input-block">
+                                            <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+                                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-card-header">
+
+                    <!-- <button class="layui-btn layui-btn-danger" onclick="delAll()">
+                         <i class="layui-icon"></i>批量删除
+                     </button>-->
+                    <button class="layui-btn" onclick="add(this)">
+                        <i class="layui-icon">&#xe608;</i>添加
+                    </button>
+                </div>
+                <div class="layui-card-body ">
+                    <table class="layui-table layui-form">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>配置名</th>
+                            <th>常用配置值</th>
+                            <th>操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {volist name="list" id="item"}
+                        <tr>
+                            <td>{$item.id}</td>
+                            <td>{$item.name}</td>
+                            <td>{$item.value}</td>
+                            <td class="td-manage">
+                                <a title="编辑" onclick="edit(this,{$item.id})" href="javascript:;">
+                                    <i class="layui-icon">&#xe63c;编辑</i></a>
+                                <a title="删除" onclick="del(this,'{$item.id}')" href="javascript:;">
+                                    <i class="layui-icon">&#xe640;</i>删除
+                                </a>
+
+                            </td>
+                        </tr>
+                        {/volist}
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="layui-card-body ">
+                    <div class="page">
+                        <div>
+                            {$page}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    layui.use(['laydate', 'form'],
+        function () {
+            var laydate = layui.laydate;
+
+            //执行一个laydate实例
+            laydate.render({
+                elem: '#start' //指定元素
+            });
+
+            //执行一个laydate实例
+            laydate.render({
+                elem: '#end' //指定元素
+            });
+        });
+
+    //删除
+    function del(obj, id) {
+        layer.confirm('您确认要删除吗？', function (index) {
+            //发异步删除数据
+            $.ajax({
+                url: "{:URL('config/del')}",
+                data: {"id": id},
+                type: "post",
+                dataType: 'json',
+                success: function (msg) {
+                    if (msg.code == 1) {
+                        layer.msg(msg.tips, {icon: 6}, function () {
+                            window.location.reload();//刷新父级窗口
+                        });
+                    } else {
+                        layer.msg(msg.tips, {icon: 5}, function () {
+                            window.location.reload();//刷新父级窗口
+                        });
+                    }
+                }
+            })
+
+        });
+    }
+
+    //添加
+    function add(obj) {
+        var url = "{:url('admin/config/add')}";
+        // alert(url);
+        x_admin_show('添加配置信息', url,900,600);
+    }
+
+    //编辑
+    function edit(obj,id) {
+        var url = "{:url('admin/config/edit')}?id=" + id;
+        x_admin_show('编辑配置信息', url,900,600);
+    }
+
+</script>
+</html>

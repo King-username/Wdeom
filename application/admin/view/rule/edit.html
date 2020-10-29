@@ -1,0 +1,85 @@
+{include file='common/head'}
+<body>
+<div class="x-body">
+    <form class="layui-form" method="post" enctype="multipart/form-data">
+        <div class="layui-form-item">
+            <label for="title" class="layui-form-label">
+                <span class="x-red">*</span>二级菜单
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="title" name="title" required="" value="{$info.title}" lay-verify="required" autocomplete="off" class="layui-input" >
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="name" class="layui-form-label">
+                <span class="x-red">*</span>Urls
+            </label>
+            <div class="layui-input-inline">
+                <textarea id="name" name="name"  lay-verify="required" autocomplete="off" class="layui-input" style="height:100px">{$info.name}</textarea>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label for="p_id" class="layui-form-label">
+                <span class="x-red">*</span>上级菜单
+            </label>
+            <div class="layui-input-inline">
+                <select name="p_id" id="p_id"  style="width:96px; " >
+                    <option value=""></option>
+                    {volist name="ruleList" id="item"}
+                    <option value="{$item.id}" {eq name="item.id" value="$info.p_id"}selected{/eq} >{$item.title}</option>
+                    {/volist}
+                </select>
+            </div>
+        </div>
+        <div>
+            <div >
+                <input type="hidden" value="{$info.id}" id="id" name="id">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">
+            </label>
+            <button  class="layui-btn" lay-filter="updatetwo" lay-submit="">
+                确定
+            </button>
+        </div>
+    </form>
+</div>
+<script>
+    layui.use(['form','layer'], function(){
+        $ = layui.jquery;
+        var form = layui.form
+            ,layer = layui.layer;
+
+        //自定义验证规则
+        //监听提交
+        form.on('submit(updatetwo)', function(data){
+            // console.log(data);
+            //ar url="";
+            $.ajax({
+                type: "post",
+                async:false,
+                url: "{:url('admin/rule/edit')}",
+                data: data.field,
+                success:function(msg){
+                    if(msg.code==1){
+                        layer.msg(msg.tips,{icon:6,time:2000});
+                        setTimeout(function () {
+                            window.parent.location.reload();//刷新父级窗口
+                        }, 1000);
+
+                    }else{
+                        layer.msg(msg.tips,{icon:5,time:1000});
+                    }
+                }
+            })
+            return false;
+        });
+
+
+    });
+</script>
+</body>
+
+</html>

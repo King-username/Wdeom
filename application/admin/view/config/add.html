@@ -1,0 +1,73 @@
+{include file='common/head'}
+
+<body>
+<div class="layui-fluid">
+    <div class="layui-row">
+        <form class="layui-form">
+            <div class="layui-form-item">
+                <label for="name" class="layui-form-label">
+                    <span class="x-red">*</span>配置说明：</label>
+                <div class="layui-input-inline">
+                    <input type="text" id="name" style="width: 650px;" name="name" lay-verify="required"
+                           autocomplete="off" class="layui-input"></div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">
+                    <span class="x-red">*</span>常用配置值：</label>
+                <div class="layui-input-inline">
+                    <input type="text" style="width: 650px;" name="value" lay-verify=""
+                           autocomplete="off" class="layui-input"></div>
+            </div>
+
+            <div class="layui-form-item layui-form-text">
+                <label class="layui-form-label">说明类型配置值：</label>
+                <div class="layui-input-block">
+                    <textarea placeholder="请输入内容" rows="15" name="content" class="layui-textarea"></textarea>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label for="L_repass" class="layui-form-label"></label>
+                <button class="layui-btn" id="L_repass" lay-filter="add" lay-submit="">增加</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    layui.use(['form','layer'], function(){
+        $ = layui.jquery;
+        var form = layui.form
+            ,layer = layui.layer;
+
+        //监听提交
+        form.on('submit(add)', function(data){
+            console.log(data);
+            $.ajax({
+                type: "post",
+                async:false,
+                url: "{:url('admin/config/add')}",
+                data: data.field,
+                success:function (res) {
+                    if(res.code == 1){
+                        layer.msg(res.tips);
+                        setTimeout(function () {
+                            // 获得frame索引
+                            var index = parent.layer.getFrameIndex(window.name);
+                            //关闭当前frame
+                            parent.layer.close(index);
+                            window.parent.location.reload();//刷新父级窗口
+                        }, 2000);
+                    }
+                    else
+                    {
+                        layer.msg(res.tips);
+                    }
+                }
+            });
+            return false;
+        });
+    });
+</script>
+
+</body>

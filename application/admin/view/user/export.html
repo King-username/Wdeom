@@ -1,0 +1,26 @@
+{include file='common/head'}
+<body>
+<div class="x-body">
+    <form class="layui-form" method="post" enctype="multipart/form-data">
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">单选框</label>
+            <div class="layui-input-block">
+                <input type="radio" name="status" value="1" title="正常" checked="">
+                <input type="radio" name="status" value="0" title="冻结">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">
+            </label>
+            <button class="layui-btn" lay-filter="add" lay-submit="">
+                提交
+            </button>
+        </div>
+    </form>
+</div>
+
+</body>
+
+</html>

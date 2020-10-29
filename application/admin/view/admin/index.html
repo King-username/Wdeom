@@ -1,0 +1,175 @@
+{include file='common/head'}
+<body>
+<div class="x-nav">
+      <span class="layui-breadcrumb">
+        <a href="">首页</a>
+          <a href="">{$nav}</a>
+        <a>
+          <cite>{$title}</cite></a>
+      </span>
+    <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"
+       href="javascript:location.replace(location.href);" title="刷新">
+        <i class="layui-icon" style="line-height:30px">ဂ</i></a>
+</div>
+<div class="x-body">
+    <xblock>
+        <button class="layui-btn" onclick="x_admin_show('添加管理员','{:url(\'admin/admin/add\')}',1000,500)"><i
+                class="layui-icon">&#xe608;</i>添加管理员
+        </button>
+    </xblock>
+    <table class="layui-table">
+        <thead>
+        <tr>
+            <th style="text-align: center">ID</th>
+            <th style="text-align: center">用户名</th>
+            <th style="text-align: center">真实姓名</th>
+            <th style="text-align: center">手机号</th>
+            <th style="text-align: center">上级</th>
+            <th style="text-align: center">公司</th>
+            <th style="text-align: center">邮箱</th>
+            <th style="text-align: center">省</th>
+            <th style="text-align: center">市</th>
+            <th style="text-align: center">乡/镇</th>
+            <th style="text-align: center">状态</th>
+            <th style="text-align: center">操作</th>
+        </tr>
+        </thead>
+        <tbody>
+        {volist name="list" id="item"}
+        <tr style="text-align: center">
+            <td>{$item.id}</td>
+            <td>{$item.username}</td>
+            <td>{$item.true_name}</td>
+            <td>{$item.phone}</td>
+            <td>{$item.pname}</td>
+            <td>{$item.company}</td>
+            <td>{$item.email}</td>
+            <td>{$item.pro_name}</td>
+            <td>{$item.city_name}</td>
+            <td>{$item.area_name}</td>
+            <td>
+                {if $item.status==1}
+                <span style="color:#076912;">正常</span>
+                {else/}
+                <span style="color:#af1a11;">冻结</span>
+                {/if}
+            </td>
+            <td class="td-manage">
+                {if $item.id==1}
+                <button class="layui-btn layui-btn-sm layui-btn-radius layui-btn-danger">平台账号禁止操作</button>
+                {else/}
+                <!-- <a title="删除" onclick="member_del(this,'{$item.id}')" href="javascript:;">
+                     <i class="layui-icon">&#xe640;</i>删除
+                 </a>-->
+                <a title="编辑" onclick="edit(this,'{$item.id}')" attr_id='' href="javascript:;">
+                    <i class="layui-icon">&#xe642;</i>编辑
+                </a>
+                {if $item.status==1}
+                <a title="冻结" onclick="status(this,'{$item.id}',0)" href="javascript:;">
+                    <i class="layui-icon">&#xe6b1;</i>冻结</a>
+                </a>{else/}
+                <a title="解冻" onclick="status(this,'{$item.id}',1)" href="javascript:;">
+                    <i class="layui-icon">&#xe756;</i>解冻</a>
+                </a>{/if}
+                {/if}
+            </td>
+        </tr>
+        {/volist}
+        </tbody>
+    </table>
+    <div class="page">
+        <div>
+            {$page}
+        </div>
+    </div>
+
+</div>
+<script>
+    layui.use('laydate', function () {
+        var laydate = layui.laydate;
+
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#start' //指定元素
+        });
+
+        //执行一个laydate实例
+        laydate.render({
+            elem: '#end' //指定元素
+        });
+    });
+
+
+    /*管理员-删除*/
+    /* function member_del(obj,id){
+         layer.confirm('您确认要删除吗？',function(index){
+             //发异步删除数据
+             $.ajax({
+                 url:"{:URL('guanli/delete')}",
+                 data:{"id":id},
+                 type:"post",
+                 dataType:'json',
+                 success:function(msg){
+                     if(msg==1){
+                         layer.msg("删除成功！",{icon: 6},function () {
+                             //获得frame索引
+                             var index = parent.layer.getFrameIndex(window.name);
+                             //关闭当前frame
+                             parent.layer.close(index);
+                             window.location.reload();//刷新父级窗口
+
+                         });
+                         return false;
+                     }else{
+                         layer.msg("删除失败！",{icon: 6},function () {
+                             //获得frame索引
+                             var index = parent.layer.getFrameIndex(window.name);
+                             //关闭当前frame
+                             parent.layer.close(index);
+                             window.location.reload();//刷新父级窗口
+
+                         });
+                         return false;
+                     }
+                 }
+             })
+
+         });
+     }*/
+    //管理员状态
+    function status(obj, id, status) {
+        //发异步删除数据
+        $.ajax({
+            url: "{:URL('admin/status')}",
+            data: {"id": id, "status": status},
+            type: "post",
+            dataType: 'json',
+            success: function (res) {
+                if (res.code == 1) {
+                    layer.msg(res.tips, {icon: 6}, function () {
+                        //获得frame索引
+                        window.location.reload();//刷新父级窗口
+                    });
+                    return false;
+                } else {
+                    layer.msg(res.tips, {icon: 6}, function () {
+
+                    });
+                    return false;
+                }
+            }
+        })
+        return false;
+    }
+
+    /*管理员-修改*/
+    function edit(obj, id) {
+        var url = "{:URL('admin/edit')}?id=" + id;
+        x_admin_show('修改用户', url, 1000, 600);
+    }
+
+</script>
+
+</body>
+
+</html>

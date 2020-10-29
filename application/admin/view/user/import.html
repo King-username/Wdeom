@@ -1,0 +1,63 @@
+{include file='common/head'}
+<body>
+<div class="x-body">
+    <form class="layui-form">
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">
+                <span class="x-red">*</span>选择文件
+            </label>
+            <div class="layui-upload">
+                <button type="button" class="layui-btn " id="cover">上传文件</button>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">
+            </label>
+            <button class="layui-btn" id="upload_file" >
+                提交
+            </button>
+        </div>
+    </form>
+</div>
+
+<script>
+    layui.use('upload', function() {
+        var upload = layui.upload;
+        //console.log(upload);
+        var $ = layui.jquery;
+        var uploadInst = upload.render({
+            elem:'#cover'//绑定元素
+            ,url:'{:url("admin/user/import")}'//上传接口
+            ,multiple: 'false'//是否允许多文件上传。设置 true即可开启
+            ,accept:'file'  // 允许上传的文件类型 images（图片）、file（所有文件）、video（视频）、audio（音频）
+            ,auto:false // 自动上传
+            ,bindAction:'#upload_file'
+            // 上传成功回调
+            ,done:function(res) {
+                if (res.code == 1) {
+                    layer.msg(res.tips, {icon: 6,time:1500}, function () {
+                        //获得frame索引
+                        var index = parent.layer.getFrameIndex(window.name);
+                        //关闭当前frame
+                        parent.layer.close(index);
+                        window.parent.location.reload();//刷新父级窗口
+                    });
+                } else {
+                    layer.msg(res.tips, {icon: 5});
+                }
+
+            }
+            // 上传失败回调
+            ,error:function(index,upload) {
+                layer.msg('上传失败');
+            }
+        });
+
+    });
+</script>
+
+</body>
+
+</html>

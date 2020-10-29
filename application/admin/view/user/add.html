@@ -1,0 +1,208 @@
+{include file='common/head'}
+<body>
+<div class="x-body">
+    <form class="layui-form" method="post" enctype="multipart/form-data">
+
+        <div class="layui-form-item">
+            <label for="username" class="layui-form-label">
+                <span class="x-red">*</span>用户名
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="username" name="username" required="" lay-verify="username"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="password" class="layui-form-label">
+                <span class="x-red">*</span>密码
+            </label>
+            <div class="layui-input-inline">
+                <input type="password" id="password" name="password" lay-verify="password"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">
+                <span class="x-red">*</span>选择头像
+            </label>
+            <div class="layui-upload">
+                <button type="button" class="layui-btn " id="cover">上传图片</button>
+            </div>
+            <div class="layui-input-inline" id="preview" name="img2">
+                <input type="hidden" id="picture" name="photo" value="">
+<!--                单图片上传展示-->
+                <img src="" alt="" id="show_img" class="layui-upload-img" style="width:80%;objec-fit: cover;;margin-left:10px">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="phone" class="layui-form-label">
+                <span class="x-red">*</span>手机号
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="phone" name="phone" lay-verify="phone"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="email" class="layui-form-label">
+                <span class="x-red">*</span>邮箱
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="email" name="email" lay-verify="email"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">所在地</label>
+            <div class="layui-input-inline">
+                <select name="province" lay-filter="province" class="province">
+                    <option value="">请选择省</option>
+                </select>
+            </div>
+            <div class="layui-input-inline">
+                <select name="city" lay-filter="city" disabled>
+                    <option value="">请选择市</option>
+                </select>
+            </div>
+            <div class="layui-input-inline">
+                <select name="area" lay-filter="area" disabled>
+                    <option value="">请选择县/区</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">
+            </label>
+            <button class="layui-btn" lay-filter="add" lay-submit="">
+                提交
+            </button>
+        </div>
+    </form>
+</div>
+<script>
+
+    layui.config({
+        base: "../../public/static/js/"
+    }).extend({
+        "address": "address"
+    })
+
+    layui.use(['jquery', "address"], function () {
+        var address = layui.address(),
+            $ = layui.jquery;
+    })
+</script>
+<script>
+    layui.use(['form', 'layer'], function () {
+        $ = layui.jquery;
+        var form = layui.form
+            , layer = layui.layer;
+        //自定义验证规则
+        form.verify({
+            username: function (value) {
+                if (value == '') {
+                    return '请输入用户名！';
+                }
+            },
+            password: function (value) {
+                if (value.length < 6 || value.length > 10) {
+                    return '密码位数错误！';
+                }
+            }
+            , password: [/(.+){6,12}$/, '密码必须6到12位']
+
+        });
+        //监听提交
+        form.on('submit(add)', function (data) {
+            /* console.log(data.field);
+             return false;*/
+            var url = "";
+            $.ajax({
+                type: "post",
+                async: false,
+                url: "{:url('admin/user/add')}",
+                data: data.field,
+                dataType: 'json',
+                success: function (res) {
+                    if (res.code == 1) {
+                        layer.msg(res.tips, {icon: 6}, function () {
+                            //获得frame索引
+                            var index = parent.layer.getFrameIndex(window.name);
+                            //关闭当前frame
+                            parent.layer.close(index);
+                            window.parent.location.reload();//刷新父级窗口
+
+                        });
+                        return false;
+                    } else {
+                        layer.msg(res.tips, {icon: 5}, function () {
+                        });
+                        return false;
+                    }
+
+                }
+            })
+            return false;
+        });
+
+    });
+</script>
+<script>
+    layui.use('upload', function() {
+        var upload = layui.upload;
+        //console.log(upload);
+        var $ = layui.jquery;
+        var uploadInst = upload.render({
+            elem:'#cover'//绑定元素
+            ,url:'{:url("admin/upload/upload")}'//上传接口
+            ,multiple: 'false'//是否允许多文件上传。设置 true即可开启
+            ,accept:'images'  // 允许上传的文件类型 images（图片）、file（所有文件）、video（视频）、audio（音频）
+            ,auto:true // 自动上传
+            ,before:function (obj) {
+                //上传前回调
+                //console.log(obj);
+                //return false;
+                // 预览
+                obj.preview(function(index,file,result) {
+                    // console.log(file.name);    //图片名字
+                    // console.log(file.type);    //图片格式
+                    // console.log(file.size);    //图片大小
+                    // console.log(result);       //图片地址
+                    //多图片上传
+                    /*$('#preview').append('<img src="' + result + '" alt="' + file.name +
+                        '" class="layui-upload-img" style="width:80%;objec-fit: cover;;margin-left:10px">')*/
+                    //单图片上传
+                    $('#show_img').attr('src',result); //图片链接 base64
+
+                });
+                // layer.load();
+            }
+            // 上传成功回调
+            ,done:function(res) {
+                //console.log(res);
+                if (res.code == 1) {
+                    //多图片上传
+                    //$('#picture').val($('#picture').val()+res.url);alert( $('#picture').val());
+                    //单图片上传
+                    $('#picture').val(res.url);
+                }
+                layer.msg(res.tips);
+            }
+            // 上传失败回调
+            ,error:function(index,upload) {
+                layer.msg('上传失败');
+            }
+        });
+    });
+</script>
+
+</body>
+
+</html>

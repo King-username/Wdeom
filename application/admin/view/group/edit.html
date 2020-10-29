@@ -1,0 +1,87 @@
+{include file='common/head'}
+<body>
+<div class="x-body">
+    <form class="layui-form" method="post" enctype="multipart/form-data">
+
+        <div class="layui-form-item">
+            <label for="title" class="layui-form-label">
+                <span class="x-red">*</span>角色名称
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="title" name="title" required="" lay-verify="required"
+                       autocomplete="off" class="layui-input" value="{$info.title}">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="remark" class="layui-form-label">
+                <span class="x-red">*</span>角色描述
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="remark" name="remark" required="" style="width: 400px;" lay-verify="required"
+                       autocomplete="off" class="layui-input" value="{$info.remark}">
+            </div>
+        </div>
+        <div>
+            <div >
+                <input type="hidden" value="{$info.id}" id="id" name="id">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">
+            </label>
+            <button  class="layui-btn" lay-filter="update" lay-submit="">
+                提交
+            </button>
+        </div>
+    </form>
+</div>
+<script>
+    layui.use(['form','layer'], function(){
+        $ = layui.jquery;
+        var form = layui.form
+            ,layer = layui.layer;
+
+        //自定义验证规则
+        //监听提交
+        form.on('submit(update)', function(data){
+            console.log(data);
+            //ar url="";
+            $.ajax({
+                type: "post",
+                async:false,
+                url: "{:url('admin/group/edit')}",
+                data: data.field,
+                success:function(msg){
+                    if(msg.code==1){
+                        layer.msg(msg.tips,{icon: 6},function () {
+                            //获得frame索引
+                            var index = parent.layer.getFrameIndex(window.name);
+                            //关闭当前frame
+                            parent.layer.close(index);
+                            window.location.reload();//刷新父级窗口
+
+                        });
+                        return false;
+
+                    }else{
+                        layer.msg(msg.tips,{icon: 5},function () {
+                            //获得frame索引
+                            //var index = parent.layer.getFrameIndex(window.name);
+                            //关闭当前frame
+                            //parent.layer.close(index);
+                            //window.parent.location.reload();//刷新父级窗口
+                        });
+                        return false;
+                    }
+                }
+            })
+            return false;
+        });
+
+
+    });
+</script>
+</body>
+
+</html>

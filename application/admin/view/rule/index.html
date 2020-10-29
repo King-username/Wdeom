@@ -1,0 +1,116 @@
+{include file="common/head"}
+<link rel="stylesheet" type="text/css" href="__STATIC__/classify/css/public.css"/>
+<style type="text/css">
+    .category-box {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .up-btn {
+        transition: transform .3s;
+        -webkit-transition: transform .3s;
+        -moz-transition: transform .3s;
+        -ms-transition: transform .3s;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+
+    .up-btn-on {
+        transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg);
+        -moz-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+    }
+</style>
+<body>
+<div class="x-nav">
+            <span class="layui-breadcrumb">
+              <a><cite>首页</cite></a>
+              <a><cite>权限管理</cite></a>
+            </span>
+    <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"
+       href="javascript:location.replace(location.href);" title="刷新"><i class="layui-icon"
+                                                                        style="line-height:30px">ဂ</i></a>
+</div>
+<div class="x-body">
+    <div class="layui-form-pane" style="margin-top: 15px;">
+        <div class="layui-form-item">
+            <button class="layui-btn" onclick="x_admin_show('添加二级菜单','{:url(\'admin/rule/add\')}')">
+                <i class="layui-icon">&#xe608;</i>添加二级菜单
+            </button>
+        </div>
+    </div>
+    <div class="layout-container">
+        <div class="layout-cont">
+            <div class="layout-cont-main">
+                <div class="add-newclass">
+                    <form action="">
+                        <div class="category-cont">
+                            <!--大分类-->
+                            {volist name="list" id="one"}
+                            {if $one.p_id == 0}
+                            <div class="big-box category-box">
+                                <div class="big-category category">
+                                    <input type="text" readonly="readonly" value="一级分类：{$one.title}"/>
+                                    <div class="btns">
+                                        <a class="up-btn"><img src="__STATIC__/classify/img/icon_bottom.png"/></a>
+                                    </div>
+                                </div>
+                                <!--子分类-->
+                                {volist name="list" id="two"}
+                                {if $two.condition == 2 && $one.id == $two.p_id}
+                                <div class="in-box category-box">
+                                    <div class="in-category category">
+                                        <input type="text" readonly="readonly" value="二级分类：{$two.title}"/>
+                                        <div class="btns">
+                                            <!--                                            <a class="up-btn"><img src="__STATIC__/classify/img/icon_bottom.png" /></a>-->
+                                            <a><img onclick="classify_edit_menu({$two.id})"
+                                                    src="__STATIC__/classify/img/icon_edit.png"/></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                {/if}
+                                {/volist}
+                            </div>
+                            {/if}
+                            {/volist}
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript">
+        $('.category-cont').on('click', '.up-btn', function () {
+            var _this = $(this);
+            _this.toggleClass('up-btn-on');
+            var category = _this.parents('.category');
+            category.parent().height('auto');
+            category.siblings('.category-box').stop().slideToggle(300);
+        })
+    </script>
+</div>
+<script>
+    //编辑菜单信息
+    function classify_edit_menu(id) {
+        //alert(id);
+
+        //var mid=$(data).attr('attr_id');
+        //alert(mid);
+        var url = '{:URL("rule/edit")}?id=' + id;
+        //alert(url);
+
+        x_admin_show('修改菜单', url)
+    }
+
+    /*时间戳转时间*/
+    function getLocalTime(nS) {
+        return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/, ' ');
+    }
+</script>
+</body>
+</html>

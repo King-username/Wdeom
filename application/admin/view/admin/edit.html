@@ -1,0 +1,223 @@
+{include file='common/head'}
+<body>
+<div class="x-body">
+    <form class="layui-form" method="post" enctype="multipart/form-data">
+        <input type="hidden" value="{$info.id}" name="id">
+        <div class="layui-form-item">
+            <label for="group_id" class="layui-form-label">
+                <span class="x-red">*</span>所属用户组
+            </label>
+            <div class="layui-input-inline">
+                <select name="group_id" id="group_id" style="width:96px; " lay-verify="required">
+                    <option value=""></option>
+                    {volist name="group" id="item"}
+                    <option value="{$item.id}" {eq name="item.id" value="$info.group_id"}selected{/eq}>{$item.title}</option>
+                    {/volist}
+                </select>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="username" class="layui-form-label">
+                <span class="x-red">*</span>用户名
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="username" name="username" value="{$info.username}" required="" lay-verify="username"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="password" class="layui-form-label">
+                <span class="x-red">*</span>密码
+            </label>
+            <div class="layui-input-inline">
+                <input type="password" id="password" name="password"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="company" class="layui-form-label">
+                <span class="x-red">*</span>公司名称
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="company" name="company" value="{$info.company}" placeholder="营业执照公司名称" style="width: 600px"
+                       lay-verify="required"
+                       autocomplete="off" class="layui-input">
+                <div class="layui-form-mid layui-word-aux">同一个公司只能注册一个账号</div>
+
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="email" class="layui-form-label">
+                <span class="x-red">*</span>邮箱
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="email" name="email" value="{$info.email}" lay-verify="email"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="true_name" class="layui-form-label">
+                <span class="x-red">*</span>负责人
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="true_name" name="true_name" value="{$info.true_name}" lay-verify="required" placeholder="负责人真实姓名"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label for="phone" class="layui-form-label">
+                <span class="x-red">*</span>手机号
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="phone" name="phone" value="{$info.phone}" lay-verify="phone"
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">所在地</label>
+            <div class="layui-input-inline">
+                <select name="province" lay-filter="province" class="province">
+                    <option value="{$province.code}">{$province.name}</option>
+                </select>
+            </div>
+            <div class="layui-input-inline">
+                <select name="city" lay-filter="city">
+                    <option value="{$city.code}">{$city.name}</option>
+                </select>
+            </div>
+            <div class="layui-input-inline">
+                <select name="area" lay-filter="area">
+                    <option value="{$area.code}">{$area.name}</option>
+                </select>
+            </div>
+
+        </div>
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">
+            </label>
+            <button  class="layui-btn" lay-filter="add" lay-submit="">
+                提交
+            </button>
+        </div>
+    </form>
+</div>
+<script>
+
+    layui.config({
+        base : "../../public/static/js/"
+    }).extend({
+        "address" : "address"
+    })
+
+    layui.use(['jquery',"address"],function() {
+        var address = layui.address(),
+            $ = layui.jquery;
+    })
+</script>
+<script>
+    layui.use(['form','layer'], function(){
+        $ = layui.jquery;
+        var form = layui.form
+            ,layer = layui.layer;
+        //自定义验证规则
+        //监听提交
+        form.on('submit(add)', function(data){
+            //console.log(data);
+            //alert($('#id').val());
+            var url="";
+            $.ajax({
+                type: "post",
+                async:false,
+                url: "{:url('admin/admin/edit')}",
+                data: data.field,
+                dataType:'json',
+                success:function (res) {
+                    /*layer.msg('添加成功！');
+                    setTimeout(function () {
+                        location.reload();
+                    }, 1000);*/
+                    //发异步，把数据提交给php
+                    if(res.code==1)
+                    {
+                        layer.msg(res.tips,{icon: 6},function () {
+                            //获得frame索引
+                            var index = parent.layer.getFrameIndex(window.name);
+                            //关闭当前frame
+                            parent.layer.close(index);
+                            window.parent.location.reload();//刷新父级窗口
+
+                        });
+                        return false;
+                    }
+                    else
+                    {
+                        layer.msg(res.tips,{icon: 5},function () {
+                            //获得frame索引
+                            /*var index = parent.layer.getFrameIndex(window.name);
+                            //关闭当前frame
+                            parent.layer.close(index);
+                            window.parent.location.reload();//刷新父级窗口*/
+                        });
+                        return false;
+                    }
+
+                }
+            })
+            return false;
+        });
+
+    });
+</script>
+<script>
+    layui.use('upload', function() {
+        var upload = layui.upload;
+        var $ = layui.jquery;
+        var uploadInst = upload.render({
+            elem:'#cover'
+            ,url:'{:url("admin/guanli/doUpload")}'
+            ,multiple: 'false'
+            ,accept:'images'  // 允许上传的文件类型
+            ,auto:true // 自动上传
+            ,before:function (obj) {
+                //console.log(obj);
+                // 预览
+                obj.preview(function(index,file,result) {
+                    // console.log(file.name);    //图片名字
+                    // console.log(file.type);    //图片格式
+                    // console.log(file.size);    //图片大小
+                    // console.log(result);       //图片地址
+                    $('#preview').append('<img src="' + result + '" alt="' + file.name +
+                        '" class="layui-upload-img" style="width:80%;objec-fit: cover;;margin-left:10px">')
+                    // $('#preview').attr('src',result); //图片链接 base64
+
+                });
+                // layer.load();
+            }
+            // 上传成功回调
+            ,done:function(res) {
+                // console.log(upload);
+                // console.log(res);
+                if (res.code == 1) {
+                    $('#picture').val($('#picture').val()+res.url);//alert( $('#picture').val());
+                    return layer.msg(res.msg);
+                }
+                return layer.msg(res.msg);
+            }
+            // 上传失败回调
+            ,error:function(index,upload) {
+                return layer.msg(res.msg);
+            }
+        });
+    });
+</script>
+</body>
+
+</html>
