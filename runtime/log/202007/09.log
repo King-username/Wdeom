@@ -1,0 +1,585 @@
+---------------------------------------------------------------
+[ 2020-07-09T14:29:29+08:00 ] 127.0.0.1 GET xnb.com/
+[运行时间：0.081351s] [吞吐率：12.29req/s] [内存消耗：1,195.17kb] [文件加载：89]
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\xnb\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'xnb.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\xnb/application/index\lang\zh-cn.php
+[ info ] [ RUN ] app\index\controller\Index->index[ D:\phpStudy\PHPTutorial\WWW\xnb\application\index\controller\Index.php ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-07-09T14:29:29+08:00 ] 127.0.0.1 GET xnb.com/favicon.ico
+[运行时间：0.062378s] [吞吐率：16.03req/s] [内存消耗：1,228.73kb] [文件加载：88]
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\xnb\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=9998901248; pgv_si=s9698324480',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://xnb.com/',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'xnb.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-07-09T14:29:40+08:00 ] 127.0.0.1 GET xnb.com/index.php?s=/admin
+[运行时间：0.110508s] [吞吐率：9.05req/s] [内存消耗：1,521.73kb] [文件加载：99]
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\xnb\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=9998901248; pgv_si=s9698324480',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'xnb.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\xnb/application/admin\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-07-09T14:29:41+08:00 ] 127.0.0.1 GET xnb.com/index.php/admin/login/index.html
+[运行时间：0.096777s] [吞吐率：10.33req/s] [内存消耗：2,460.98kb] [文件加载：109]
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\xnb\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=9998901248; pgv_si=s9698324480; PHPSESSID=va4s99n73a0cs7upnf2i3q88bm',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'xnb.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\xnb/application/admin\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Login->index[ D:\phpStudy\PHPTutorial\WWW\xnb\application\admin\controller\Login.php ]
+[ info ] [ VIEW ] D:\phpStudy\PHPTutorial\WWW\xnb/application/admin\view\login\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-07-09T14:29:41+08:00 ] 127.0.0.1 GET xnb.com/index.php/captcha.html
+[运行时间：0.112388s] [吞吐率：8.90req/s] [内存消耗：1,250.65kb] [文件加载：87]
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\xnb\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=9998901248; pgv_si=s9698324480; PHPSESSID=va4s99n73a0cs7upnf2i3q88bm',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://xnb.com/index.php/admin/login/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'xnb.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ D:\phpStudy\PHPTutorial\WWW\xnb\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-07-09T14:29:54+08:00 ] 127.0.0.1 POST xnb.com/index.php/admin/login/checklogin.html
+[运行时间：0.209294s] [吞吐率：4.78req/s] [内存消耗：2,456.84kb] [文件加载：110]
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\xnb\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'checklogin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=9998901248; pgv_si=s9698324480; PHPSESSID=va4s99n73a0cs7upnf2i3q88bm',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://xnb.com/index.php/admin/login/index.html',
+  'origin' => 'http://xnb.com',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'content-length' => '40',
+  'connection' => 'close',
+  'host' => 'xnb.com',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'admin',
+  'password' => '123456',
+  'code' => '4273',
+)
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\xnb/application/admin\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Login->checkLogin[ D:\phpStudy\PHPTutorial\WWW\xnb\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.009004s ] mysql:host=127.0.0.1;dbname=xnb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cms_admin` [ RunTime:0.039345s ]
+[ sql ] [ SQL ] SELECT * FROM `cms_admin` WHERE  `username` = 'admin' LIMIT 1 [ RunTime:0.003950s ]
+[ sql ] [ SQL ] UPDATE `cms_admin`  SET `last_time`=1594276194  WHERE  `id` = 1 [ RunTime:0.015299s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cms_log` [ RunTime:0.026192s ]
+[ sql ] [ SQL ] INSERT INTO `cms_log` (`admin_id` , `title` , `ip` , `time`) VALUES (1 , '管理员登录' , '127.0.0.1' , 1594276194) [ RunTime:0.015462s ]
+---------------------------------------------------------------
+[ 2020-07-09T14:29:55+08:00 ] 127.0.0.1 GET xnb.com/index.php/admin/index/index.html
+[运行时间：0.227738s] [吞吐率：4.39req/s] [内存消耗：2,644.29kb] [文件加载：114]
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\xnb\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=9998901248; pgv_si=s9698324480; PHPSESSID=va4s99n73a0cs7upnf2i3q88bm',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://xnb.com/index.php/admin/login/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'xnb.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\xnb/application/admin\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\phpStudy\PHPTutorial\WWW\xnb\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpStudy\PHPTutorial\WWW\xnb/application/admin\view\index\index.html [ array (
+  0 => 'menu',
+  1 => 'adminInfo',
+  2 => 'nav',
+  3 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003467s ] mysql:host=127.0.0.1;dbname=xnb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cms_admin` [ RunTime:0.025841s ]
+[ sql ] [ SQL ] SELECT * FROM `cms_admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.003873s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cms_group` [ RunTime:0.030008s ]
+[ sql ] [ SQL ] SELECT * FROM `cms_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.003044s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cms_rule` [ RunTime:0.028355s ]
+[ sql ] [ SQL ] SELECT * FROM `cms_rule` WHERE  `id` IN (1,2,3,4,5,6,7,8,9,10)  AND `p_id` = 0  AND `status` = 1 ORDER BY `show_order` DESC [ RunTime:0.004598s ]
+[ sql ] [ SQL ] SELECT * FROM `cms_rule` WHERE  `p_id` = 1  AND `status` = 1  AND `id` IN (1,2,3,4,5,6,7,8,9,10) ORDER BY `show_order` DESC [ RunTime:0.004274s ]
+[ sql ] [ SQL ] SELECT * FROM `cms_rule` WHERE  `p_id` = 5  AND `status` = 1  AND `id` IN (1,2,3,4,5,6,7,8,9,10) ORDER BY `show_order` DESC [ RunTime:0.003053s ]
+[ sql ] [ SQL ] SELECT * FROM `cms_rule` WHERE  `p_id` = 7  AND `status` = 1  AND `id` IN (1,2,3,4,5,6,7,8,9,10) ORDER BY `show_order` DESC [ RunTime:0.003742s ]
+[ sql ] [ SQL ] SELECT * FROM `cms_rule` WHERE  `p_id` = 9  AND `status` = 1  AND `id` IN (1,2,3,4,5,6,7,8,9,10) ORDER BY `show_order` DESC [ RunTime:0.003548s ]
+---------------------------------------------------------------
+[ 2020-07-09T14:29:56+08:00 ] 127.0.0.1 GET xnb.com/index.php/admin/index/welcome.html
+[运行时间：0.306779s] [吞吐率：3.26req/s] [内存消耗：2,572.76kb] [文件加载：113]
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\xnb\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=9998901248; pgv_si=s9698324480; PHPSESSID=va4s99n73a0cs7upnf2i3q88bm',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://xnb.com/index.php/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.132 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'xnb.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\xnb/application/admin\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->welcome[ D:\phpStudy\PHPTutorial\WWW\xnb\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpStudy\PHPTutorial\WWW\xnb/application/admin\view\index\welcome.html [ array (
+  0 => 'config',
+  1 => 'userCount',
+  2 => 'adminInfo',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.003170s ] mysql:host=127.0.0.1;dbname=xnb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cms_admin` [ RunTime:0.024246s ]
+[ sql ] [ SQL ] SELECT * FROM `cms_admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.003279s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cms_user` [ RunTime:0.028508s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `cms_user` LIMIT 1 [ RunTime:0.003163s ]
+---------------------------------------------------------------
+[ 2020-07-09T16:47:42+08:00 ] 127.0.0.1 GET xnb.com/index.php?s=/admin
+[运行时间：0.125518s] [吞吐率：7.97req/s] [内存消耗：1,521.43kb] [文件加载：99]
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\xnb\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=9998901248',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'xnb.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\xnb/application/admin\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-07-09T16:47:42+08:00 ] 127.0.0.1 GET xnb.com/index.php/admin/login/index.html
+[运行时间：0.093792s] [吞吐率：10.66req/s] [内存消耗：2,343.56kb] [文件加载：107]
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\xnb\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=9998901248; PHPSESSID=9aeaheoacss3uu0pc38aascgeb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'xnb.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\xnb/application/admin\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Login->index[ D:\phpStudy\PHPTutorial\WWW\xnb\application\admin\controller\Login.php ]
+[ info ] [ VIEW ] D:\phpStudy\PHPTutorial\WWW\xnb/application/admin\view\login\index.html [ array (
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-07-09T16:47:42+08:00 ] 127.0.0.1 GET xnb.com/index.php/captcha.html
+[运行时间：0.155566s] [吞吐率：6.43req/s] [内存消耗：1,250.35kb] [文件加载：87]
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\xnb\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'method',
+  'method' => 
+  array (
+    0 => '\\think\\captcha\\CaptchaController',
+    1 => 'index',
+  ),
+  'var' => 
+  array (
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=9998901248; PHPSESSID=9aeaheoacss3uu0pc38aascgeb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://xnb.com/index.php/admin/login/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'xnb.com',
+)
+[ info ] [ PARAM ] array (
+  'id' => NULL,
+)
+[ info ] [ RUN ] think\captcha\CaptchaController->index[ D:\phpStudy\PHPTutorial\WWW\xnb\vendor\topthink\think-captcha\src\CaptchaController.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-07-09T16:47:42+08:00 ] 127.0.0.1 GET xnb.com/favicon.ico
+[运行时间：0.069634s] [吞吐率：14.36req/s] [内存消耗：1,229.02kb] [文件加载：88]
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\xnb\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'favicon.ico',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=9998901248; PHPSESSID=9aeaheoacss3uu0pc38aascgeb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://xnb.com/index.php/admin/login/index.html',
+  'accept' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
+  'connection' => 'close',
+  'host' => 'xnb.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2020-07-09T16:47:48+08:00 ] 127.0.0.1 POST xnb.com/index.php/admin/login/checklogin.html
+[运行时间：0.185641s] [吞吐率：5.39req/s] [内存消耗：2,456.66kb] [文件加载：110]
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\xnb\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'login',
+    2 => 'checklogin',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=9998901248; PHPSESSID=9aeaheoacss3uu0pc38aascgeb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://xnb.com/index.php/admin/login/index.html',
+  'origin' => 'http://xnb.com',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => '*/*',
+  'content-length' => '40',
+  'connection' => 'close',
+  'host' => 'xnb.com',
+)
+[ info ] [ PARAM ] array (
+  'username' => 'admin',
+  'password' => '123456',
+  'code' => '0163',
+)
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\xnb/application/admin\lang\zh-cn.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Login->checkLogin[ D:\phpStudy\PHPTutorial\WWW\xnb\application\admin\controller\Login.php ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ CACHE ] INIT File
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.009399s ] mysql:host=127.0.0.1;dbname=xnb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cms_admin` [ RunTime:0.025510s ]
+[ sql ] [ SQL ] SELECT * FROM `cms_admin` WHERE  `username` = 'admin' LIMIT 1 [ RunTime:0.005962s ]
+[ sql ] [ SQL ] UPDATE `cms_admin`  SET `last_time`=1594284468  WHERE  `id` = 1 [ RunTime:0.016873s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cms_log` [ RunTime:0.023061s ]
+[ sql ] [ SQL ] INSERT INTO `cms_log` (`admin_id` , `title` , `ip` , `time`) VALUES (1 , '管理员登录' , '127.0.0.1' , 1594284468) [ RunTime:0.016912s ]
+---------------------------------------------------------------
+[ 2020-07-09T16:47:49+08:00 ] 127.0.0.1 GET xnb.com/index.php/admin/index/index.html
+[运行时间：0.314962s] [吞吐率：3.17req/s] [内存消耗：2,522.98kb] [文件加载：112]
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\xnb\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=9998901248; PHPSESSID=9aeaheoacss3uu0pc38aascgeb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://xnb.com/index.php/admin/login/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'xnb.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\xnb/application/admin\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->index[ D:\phpStudy\PHPTutorial\WWW\xnb\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpStudy\PHPTutorial\WWW\xnb/application/admin\view\index\index.html [ array (
+  0 => 'menu',
+  1 => 'adminInfo',
+  2 => 'nav',
+  3 => 'title',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.002797s ] mysql:host=127.0.0.1;dbname=xnb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cms_admin` [ RunTime:0.056521s ]
+[ sql ] [ SQL ] SELECT * FROM `cms_admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.006174s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cms_group` [ RunTime:0.043841s ]
+[ sql ] [ SQL ] SELECT * FROM `cms_group` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.007543s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cms_rule` [ RunTime:0.037799s ]
+[ sql ] [ SQL ] SELECT * FROM `cms_rule` WHERE  `id` IN (1,2,3,4,5,6,7,8,9,10)  AND `p_id` = 0  AND `status` = 1 ORDER BY `show_order` DESC [ RunTime:0.004354s ]
+[ sql ] [ SQL ] SELECT * FROM `cms_rule` WHERE  `p_id` = 1  AND `status` = 1  AND `id` IN (1,2,3,4,5,6,7,8,9,10) ORDER BY `show_order` DESC [ RunTime:0.006573s ]
+[ sql ] [ SQL ] SELECT * FROM `cms_rule` WHERE  `p_id` = 5  AND `status` = 1  AND `id` IN (1,2,3,4,5,6,7,8,9,10) ORDER BY `show_order` DESC [ RunTime:0.005201s ]
+[ sql ] [ SQL ] SELECT * FROM `cms_rule` WHERE  `p_id` = 7  AND `status` = 1  AND `id` IN (1,2,3,4,5,6,7,8,9,10) ORDER BY `show_order` DESC [ RunTime:0.005367s ]
+[ sql ] [ SQL ] SELECT * FROM `cms_rule` WHERE  `p_id` = 9  AND `status` = 1  AND `id` IN (1,2,3,4,5,6,7,8,9,10) ORDER BY `show_order` DESC [ RunTime:0.004024s ]
+---------------------------------------------------------------
+[ 2020-07-09T16:47:50+08:00 ] 127.0.0.1 GET xnb.com/index.php/admin/index/welcome.html
+[运行时间：0.352641s] [吞吐率：2.84req/s] [内存消耗：2,438.83kb] [文件加载：111]
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\xnb\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'index',
+    2 => 'welcome',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'pgv_pvi=9998901248; PHPSESSID=9aeaheoacss3uu0pc38aascgeb',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'referer' => 'http://xnb.com/index.php/admin/index/index.html',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'close',
+  'host' => 'xnb.com',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] D:\phpStudy\PHPTutorial\WWW\xnb/application/admin\lang\zh-cn.php
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ RUN ] app\admin\controller\Index->welcome[ D:\phpStudy\PHPTutorial\WWW\xnb\application\admin\controller\Index.php ]
+[ info ] [ VIEW ] D:\phpStudy\PHPTutorial\WWW\xnb/application/admin\view\index\welcome.html [ array (
+  0 => 'config',
+  1 => 'userCount',
+  2 => 'adminInfo',
+) ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.013035s ] mysql:host=127.0.0.1;dbname=xnb;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cms_admin` [ RunTime:0.033148s ]
+[ sql ] [ SQL ] SELECT * FROM `cms_admin` WHERE  `id` = 1 LIMIT 1 [ RunTime:0.005579s ]
+[ sql ] [ SQL ] SHOW COLUMNS FROM `cms_user` [ RunTime:0.029887s ]
+[ sql ] [ SQL ] SELECT COUNT(*) AS tp_count FROM `cms_user` LIMIT 1 [ RunTime:0.005636s ]
